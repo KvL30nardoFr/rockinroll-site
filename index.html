@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rock in Roll</title>
+  <link rel="stylesheet" href="main.css" />
+</head>
+<body>
+  <!-- Áudio de fundo -->
+  <audio autoplay loop>
+    <source src="rock.mp3" type="audio/mpeg" />
+    Seu navegador não suporta áudio em HTML5.
+  </audio>
+
+<div class="overlay">
+  <div class="vinyl"></div>
+  <div class="guitar"></div>
+
+    <!-- Logo no topo -->
+    <header class="logo-topo" role="banner">
+      <img src="img/logo_rock.png" alt="Logo Rock" />
+    </header>
+
+    <!-- Texto das bandas -->
+    <section class="band-names" aria-label="Nomes das bandas">
+      <p>
+        The Rolling Stones ♪ The Beatles ♪ Kiss ♪ Iron Maiden ♪ Queen ♪ Led Zeppelin ♪ Pink Floyd ♪ Guns N' Roses ♪ Metallica ♪ U2
+      </p>
+    </section>
+
+    <!-- Seletor de roqueiros com scroll horizontal -->
+    <section class="character-select" aria-label="Seletor de bandas">
+      <h2>Selecione a Banda</h2>
+
+      <div class="rockers" tabindex="0" role="list" aria-label="Seleção de bandas com scroll horizontal">
+        <div class="rocker" tabindex="0" role="listitem" onclick="selectRocker('beatles')" onkeydown="if(event.key==='Enter'){selectRocker('beatles')}">
+          <img src="img/beatles.png" alt="The Beatles" />
+        </div>
+        <div class="rocker" tabindex="0" role="listitem" onclick="selectRocker('rolling')" onkeydown="if(event.key==='Enter'){selectRocker('rolling')}">
+          <img src="img/rollingstones.png" alt="The Rolling Stones" />
+        </div>
+        <div class="rocker" tabindex="0" role="listitem" onclick="selectRocker('metallica')" onkeydown="if(event.key==='Enter'){selectRocker('metallica')}">
+          <img src="img/metallica.png" alt="Metallica" />
+        </div>
+        <div class="rocker" tabindex="0" role="listitem" onclick="selectRocker('queen')" onkeydown="if(event.key==='Enter'){selectRocker('queen')}">
+          <img src="img/queen.png" alt="Queen" />
+        </div>
+        <div class="rocker" tabindex="0" role="listitem" onclick="selectRocker('kiss')" onkeydown="if(event.key==='Enter'){selectRocker('kiss')}">
+          <img src="img/kiss.png" alt="Kiss" />
+        </div>
+        <div class="rocker" tabindex="0" role="listitem" onclick="selectRocker('maiden')" onkeydown="if(event.key==='Enter'){selectRocker('maiden')}">
+          <img src="img/ironmaiden.png" alt="Iron Maiden" />
+        </div>
+        <div class="rocker" tabindex="0" role="listitem" onclick="selectRocker('zeppelin')" onkeydown="if(event.key==='Enter'){selectRocker('zeppelin')}">
+          <img src="img/zeppelin.png" alt="Led Zeppelin" />
+        </div>
+        <div class="rocker" tabindex="0" role="listitem" onclick="selectRocker('pinkfloyd')" onkeydown="if(event.key==='Enter'){selectRocker('pinkfloyd')}">
+          <img src="img/pinkfloyd.png" alt="Pink Floyd" />
+        </div>
+        <div class="rocker" tabindex="0" role="listitem" onclick="selectRocker('guns')" onkeydown="if(event.key==='Enter'){selectRocker('guns')}">
+          <img src="img/guns.png" alt="Guns N' Roses" />
+        </div>
+        <div class="rocker" tabindex="0" role="listitem" onclick="selectRocker('u2')" onkeydown="if(event.key==='Enter'){selectRocker('u2')}">
+          <img src="img/u2.png" alt="U2" />
+        </div>
+      </div>
+
+      <div class="rocker-info" id="rocker-info" aria-live="polite" aria-atomic="true" style="display:none;">
+        <h3 id="band-name"></h3>
+        <img id="band-logo" src="" alt="" />
+        <p id="band-history"></p>
+        <ul id="band-facts"></ul>
+      </div>
+    </section>
+  </div>
+
+  <!-- Botão para voltar ao topo -->
+  <button id="btn-top" title="Voltar ao topo" aria-label="Voltar ao topo">↑ Topo</button>
+
+  <script src="app.js"></script>
+</body>
+</html>
