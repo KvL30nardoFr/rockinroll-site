@@ -292,3 +292,11 @@ html, body {
       0 0 40px #cc0000;
   }
 }
+@media (max-width: 600px) {
+  .logo-topo img {
+    max-width: 90vw; /* 90% da largura da viewport */
+    height: auto;
+    margin: 0 auto;
+    display: block;
+  }
+}
