@@ -25,21 +25,21 @@ html, body {
   box-sizing: border-box; /* importante pra padding não estourar */
 }
 
-/* Logo topo */
-.logo-topo {
-  position: relative; /* deixa normal */
-  margin: 0 auto 20px auto; /* sem margem em cima, só embaixo */
-  padding-top: 0;
-  padding-bottom: 20px; /* se quiser espaçamento só embaixo */
-  width: fit-content;
-  text-align: center;
-}
+@media (max-width: 600px) {
+  .logo-topo {
+    width: 100% !important;  /* ocupa toda largura possível */
+    padding: 0 10px;          /* espaçamento nas laterais */
+    box-sizing: border-box;   /* pra não estourar */
+  }
 
-.logo-topo img {
-  max-width: 600px;
-  height: auto;
-  user-select: none;
-  display: block;
+  .logo-topo img {
+    max-width: 90vw; /* 90% da viewport */
+    width: 100%;     /* força o redimensionamento */
+    height: auto;
+    margin: 0 auto;
+    display: block;
+    object-fit: contain; /* evita deformar */
+  }
 }
 
 /* Texto bandas */
